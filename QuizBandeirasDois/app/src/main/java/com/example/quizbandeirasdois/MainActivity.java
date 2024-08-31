@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Random random = new Random();
 
     //rodada e indice
-    int indice = random.nextInt(8);
+    int index = random.nextInt(8);
     int rodada = 0;
 
     //respostas corretas e erradas
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 //Se o botão tem o mesmo texto que a resposta correta
                 //RADIO BOTÃO 1
                 if(selectedRadioButton != null) {
-                    if (selectedRadioButton.getText().toString().equals( opcoes[indice])) {
+                    if (selectedRadioButton.getText().toString().equals( opcoes[index])) {
                         Toast.makeText(MainActivity.this, "Resposta correta", Toast.LENGTH_LONG).show();
                         rodada++;
                         corretas++;
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         if (usados.size() >= bandeiras.length) {
             usados.clear(); //limpa a lista quando todas as bandeiras foram usadas
         }
+        index = indice;
 
         imgView.setImageResource(bandeiras[indice]);
         // Configura os botões com as opções, etc.
